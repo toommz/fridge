@@ -6,21 +6,27 @@ module Recipes
       raise EmptyIngredientsError if ingredients.empty?
 
       @ingredients = ingredients
-      @base_query = Recipe.joins(:ingredients)
+      @score_regex = Regexp.new(ingredients.join("|"))
     end
 
     def call
-      query = base_query.where("ingredients.title ILIKE ?", "%#{ingredients.pop}%")
+      query = ingredients.map do |ingredient|
+        Recipe.with_ingredient(ingredient).to_sql
+      end.join(" intersect ")
 
-      ingredients.each do |ingredient|
-        query = query.or(base_query.where("ingredients.title ILIKE ?", "%#{ingredient}%"))
-      end
+      Recipe.find_by_sql(query).map do |recipe|
+        recipe_ingredients = recipe.ingredients.pluck(:title)
+        max_score = recipe_ingredients.length
 
-      query.all.uniq
+        matching_score = recipe_ingredients.map { |ingredient| score_regex.match(ingredient) }.compact.length
+        score = matching_score - (max_score - matching_score)
+
+        {score: score, recipe: recipe}
+      end.sort { |a, b| b[:score] <=> a[:score] }
     end
 
     private
 
-    attr_reader :ingredients, :base_query
+    attr_reader :ingredients, :score_regex
   end
 end

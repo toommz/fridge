@@ -1,59 +1,97 @@
 [
-    {
-      "title": "Chocolate cake",
-      "cook_time": 25,
-      "prep_time": 10,
-      "ingredients": [
-        "1 cup all-purpose flour",
-        "1 cup white sugar",
-        "100g chocolate"
-      ],
-      "ratings": 4.74,
-      "cuisine": "",
-      "category": "Cake",
-      "author": "bluegirl",
-      "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2021%2F10%2F26%2Fcornbread-1.jpg"
-    },
-    {
-      "title": "Caramel",
-      "cook_time": 35,
-      "prep_time": 15,
-      "ingredients": [
-        "3 cup white sugar"
-      ],
-      "ratings": 4.74,
-      "cuisine": "",
-      "category": "Misc",
-      "author": "deleteduser",
-      "image":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg"
-    },
-    {
-      "title": "Chocolate ice cream",
-      "cook_time": 35,
-      "prep_time": 15,
-      "ingredients": [
-        "3 cup white sugar",
-        "2 spoons cream",
-        "3 teaspoons chocolate"
-      ],
-      "ratings": 4.74,
-      "cuisine": "",
-      "category": "Ice cream",
-      "author": "deleteduser",
-      "image":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg"
-    },
-    {
-      "title": "Chili sin carne",
-      "cook_time": 35,
-      "prep_time": 15,
-      "ingredients": [
-        "3 cups white rice",
-        "2 cups red beans"
-      ],
-      "ratings": 4.74,
-      "cuisine": "",
-      "category": "Veggie",
-      "author": "deleteduser",
-      "image":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg"
-    }
-  ]
+  {
+    "title": "Chocolate and vanilla cake",
+    "cook_time": 35,
+    "prep_time": 15,
+    "ingredients": [
+      "1 cup all-purpose flour",
+      "1 cup white sugar",
+      "100g chocolate",
+      "5 vanilla pods",
+      "1 yogurt",
+      "100g butter"
+    ],
+    "ratings": 4.74,
+    "cuisine": "",
+    "category": "Cake",
+    "author": "deleteduser",
+    "image":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg"
+  },
+  {
+    "title": "Japanese Chocolate and vanilla cake",
+    "cook_time": 35,
+    "prep_time": 15,
+    "ingredients": [
+      "1 cup all-purpose flour",
+      "1 cup white sugar",
+      "100g chocolate",
+      "5 vanilla pods",
+      "1 yogurt",
+      "100g butter",
+      "3 cups white rice",
+      "2 cups red beans"
+    ],
+    "ratings": 4.74,
+    "cuisine": "",
+    "category": "Cake",
+    "author": "deleteduser",
+    "image":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg"
+  },
+  {
+    "title": "Caramel",
+    "cook_time": 35,
+    "prep_time": 15,
+    "ingredients": [
+      "3 cup white sugar"
+    ],
+    "ratings": 4.74,
+    "cuisine": "",
+    "category": "Misc",
+    "author": "deleteduser",
+    "image":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg"
+  },
+  {
+    "title": "Chocolate cake",
+    "cook_time": 25,
+    "prep_time": 10,
+    "ingredients": [
+      "1 cup all-purpose flour",
+      "1 cup white sugar",
+      "100g chocolate"
+    ],
+    "ratings": 4.74,
+    "cuisine": "",
+    "category": "Cake",
+    "author": "bluegirl",
+    "image": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2021%2F10%2F26%2Fcornbread-1.jpg"
+  },
+  {
+    "title": "Chocolate ice cream",
+    "cook_time": 35,
+    "prep_time": 15,
+    "ingredients": [
+      "3 cup white sugar",
+      "2 spoons cream",
+      "3 teaspoons chocolate"
+    ],
+    "ratings": 4.74,
+    "cuisine": "",
+    "category": "Ice cream",
+    "author": "deleteduser",
+    "image":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg"
+  },
+  {
+    "title": "Chili sin carne",
+    "cook_time": 35,
+    "prep_time": 15,
+    "ingredients": [
+      "3 cups white rice",
+      "2 cups red beans"
+    ],
+    "ratings": 4.74,
+    "cuisine": "",
+    "category": "Veggie",
+    "author": "deleteduser",
+    "image":"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2018%2F11%2F546316.jpg"
+  }
+]

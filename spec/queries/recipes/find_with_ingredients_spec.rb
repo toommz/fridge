@@ -32,22 +32,48 @@ RSpec.describe Recipes::FindWithIngredients do
       it "returns recipes containing this ingredient" do
         results = subject.call
 
-        expect(results.length).to eq(1)
+        expect(results.length).to eq(2)
       end
 
-      it "sorts recipes by relevance"
+      it "sorts recipes by relevance" do
+        results = subject.call
+        titles = results.map { |r| r[:recipe] }.map(&:title)
+
+        expect(titles)
+          .to eq([
+            "Chili sin carne",
+            "Japanese Chocolate and vanilla cake"
+          ])
+      end
     end
 
     context "given 3 known ingredients" do
       subject { described_class.new(ingredients: ["sugar", "flour", "chocolate"]) }
 
-      it "returns recipes containing some of those ingredients" do
+      it "returns recipes containing all those ingredients" do
         results = subject.call
 
         expect(results.length).to eq(3)
       end
 
-      it "sorts recipes by relevance"
+      it "sorts recipes by relevance" do
+        results = subject.call
+        titles = results.map { |r| r[:recipe] }.map(&:title)
+
+        expect(titles)
+          .to eq([
+            "Chocolate cake",
+            "Chocolate and vanilla cake",
+            "Japanese Chocolate and vanilla cake"
+          ])
+      end
+
+      it "sets a relevance score on recipes" do
+        results = subject.call
+        scores = results.map { |r| r[:score] }
+
+        expect(scores).to eq([3, 0, -2])
+      end
     end
   end
 end

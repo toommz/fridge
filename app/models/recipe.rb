@@ -11,4 +11,8 @@ class Recipe < ApplicationRecord
 
   has_many :recipe_ingredients
   has_many :ingredients, through: :recipe_ingredients
+
+  # Scopes
+
+  scope :with_ingredient, ->(ingredient) { joins(:ingredients).merge(Ingredient.by_title(ingredient)) }
 end
