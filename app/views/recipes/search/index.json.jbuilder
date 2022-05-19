@@ -5,6 +5,7 @@ json.array! @data do |entry|
   json.id recipe.id
   json.title recipe.title
   json.score score
+  json.image recipe.image
   json.ingredients(recipe.ingredients) do |ingredient|
     json.id ingredient.id
     json.title ingredient.title

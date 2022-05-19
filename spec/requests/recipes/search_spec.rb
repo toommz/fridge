@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Recipes::Searches", type: :request do
   describe "GET /index" do
@@ -12,7 +12,7 @@ RSpec.describe "Recipes::Searches", type: :request do
       it "returns the error in json" do
         error = JSON.parse(response.body)
 
-        expect(error).to eq({ "error" => "please provide at least one ingredient" })
+        expect(error).to eq({"error" => "please provide at least one ingredient"})
       end
     end
 
@@ -31,7 +31,7 @@ RSpec.describe "Recipes::Searches", type: :request do
         data = JSON.parse(response.body)
         recipe = data.first
 
-        expect(recipe).to match({ "id" => Integer, "ingredients" => Array, "score" => Integer, "title" => String })
+        expect(recipe).to match({"id" => Integer, "image" => String, "ingredients" => Array, "score" => Integer, "title" => String})
       end
     end
   end
