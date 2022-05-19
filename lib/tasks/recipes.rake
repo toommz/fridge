@@ -5,8 +5,8 @@ namespace :recipes do
     file_content = File.read(source_path)
     raw_recipes = JSON.parse(file_content)
 
-    limit = ENV.fetch("RECIPES_IMPORT_LIMIT", nil)
+    limit = ENV["RECIPES_IMPORT_LIMIT"].present? ? ENV["RECIPES_IMPORT_LIMIT"].to_i : nil
 
-    Recipes::Importer.new(raw_recipes: raw_recipes, limit: limit.to_i).call
+    Recipes::Importer.new(raw_recipes: raw_recipes, limit: limit).call
   end
 end
