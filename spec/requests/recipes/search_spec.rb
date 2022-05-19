@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Recipes::Searches", type: :request do
   describe "GET /index" do
     context "without passing any ingredients in params" do
-      before { get recipes_search_index_url(ingredients: []) }
+      before { get recipes_search_index_url(ingredients: [], format: :json) }
 
       it "returns http bad request" do
         expect(response).to have_http_status(:bad_request)
@@ -20,7 +20,7 @@ RSpec.describe "Recipes::Searches", type: :request do
       before do
         import_recipes_from("desserts.json")
 
-        get recipes_search_index_url(ingredients: ["sugar", "chocolate"])
+        get recipes_search_index_url(ingredients: ["sugar", "chocolate"], format: :json)
       end
 
       it "returns http success" do
@@ -31,7 +31,7 @@ RSpec.describe "Recipes::Searches", type: :request do
         data = JSON.parse(response.body)
         recipe = data.first
 
-        expect(recipe).to match({ "score" => Integer, "recipe" => Hash })
+        expect(recipe).to match({ "id" => Integer, "ingredients" => Array, "score" => Integer, "title" => String })
       end
     end
   end

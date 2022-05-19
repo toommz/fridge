@@ -62,3 +62,5 @@ end
 group :test do
   gem "shoulda-matchers"
 end
+
+gem "jsbundling-rails", "~> 1.0"
