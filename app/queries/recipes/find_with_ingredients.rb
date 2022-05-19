@@ -4,9 +4,7 @@ module Recipes
 
     def initialize(ingredients:)
       raise EmptyIngredientsError if ingredients.empty?
-
       @ingredients = ingredients
-      @score_regex = Regexp.new(ingredients.join("|"))
     end
 
     def call
@@ -16,9 +14,10 @@ module Recipes
 
       Recipe.find_by_sql(query).map do |recipe|
         recipe_ingredients = recipe.ingredients.pluck(:title)
-        max_score = recipe_ingredients.length
 
-        matching_score = recipe_ingredients.map { |ingredient| score_regex.match(ingredient) }.compact.length
+        max_score = recipe_ingredients.length
+        matching_score = ingredients.length
+
         score = matching_score - (max_score - matching_score)
 
         {score: score, recipe: recipe}
@@ -27,6 +26,6 @@ module Recipes
 
     private
 
-    attr_reader :ingredients, :score_regex
+    attr_reader :ingredients
   end
 end
