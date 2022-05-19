@@ -2,11 +2,7 @@ require "rails_helper"
 
 RSpec.describe Recipes::FindWithIngredients do
   before do
-    source_path = Rails.root.join("spec", "fixtures", "data", "desserts.json")
-    file_content = File.read(source_path)
-    raw_recipes = JSON.parse(file_content)
-
-    Recipes::Importer.new(raw_recipes: raw_recipes).call
+    import_recipes_from("desserts.json")
   end
 
   describe "#new" do
