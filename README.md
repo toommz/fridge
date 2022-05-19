@@ -3,8 +3,12 @@
 [Live at Heroku](https://fridge.herokuapp.com/)
 
 ```bash
+export RECIPES_IMPORT_LIMIT=700
+
 bundle install
 yarn install
+bin/rails db:setup
+bin/rails recipes:import
 bin/dev
 ```
 
