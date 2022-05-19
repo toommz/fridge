@@ -32,9 +32,10 @@ const App = () => {
     <>
       <form onSubmit={handleSubmit}>
         <label>
-          In my fridge I have:
+          In my fridge I have: (separate ingredients with ",")
         </label>
-        <input type="text" value={formData.ingredients} onChange={(event) => setFormData({...formData, ingredients: event.target.value })} />
+        <br/>
+        <input placeholder="peanut butter,flour,sugar" type="text" value={formData.ingredients} onChange={(event) => setFormData({...formData, ingredients: event.target.value })} />
         <input type="submit" value="Gimme dinner ideas" />
       </form>
 
